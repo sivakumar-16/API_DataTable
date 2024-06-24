@@ -1,12 +1,15 @@
 const tableBody = document.getElementById("tableBody");
 const url = "https://dummyjson.com/todos";
 const searchInput = document.getElementById("searchText");
+const searchButton = document.getElementById("search-btn");
 const fetchInput = document.getElementById("fetch-data");
 const fetchButton = document.getElementById("fetch-btn");
 let todos = [];
 
 const fetchTodos = () => {
   const limit = fetchInput.value;
+  if(limit >= 255) alert('data not found')
+    else{
   fetch(`${url}?limit=${limit}`)
     .then((response) => response.json())
     .then((data) => {
@@ -16,6 +19,7 @@ const fetchTodos = () => {
     .catch((error) => {
       console.error("error fetching data", error);
     });
+  }
 };
 
 fetchTodos();
@@ -29,7 +33,7 @@ const displayTable = (data) => {
     <td>${todo.userId}</td>
     <td>${todo.todo}</td>
     <td>${todo.completed}</td>
-        <td><button class="delete-btn" data-id="${todo.id}">Delete</button></td>
+    <td><button class="delete-btn" data-id="${todo.id}">Delete</button></td>
 
     `;
     tableBody.appendChild(row);
@@ -40,13 +44,21 @@ const displayTable = (data) => {
     });
   });
 };
-searchInput.addEventListener("input", () => {
+searchButton.addEventListener("click", () => {
   const searchText = searchInput.value.toLowerCase();
-
-  const filderData = todos.filter((todo) =>
-    todo.todo.toLowerCase().includes(searchText)
+  if (!searchText) {
+    alert("put search item");
+    return;
+  }
+  const filderData = todos.filter((todos) =>
+    todos.todo.toLowerCase().includes(searchText)
   );
-  displayTable(filderData);
+
+  if (filderData == 0) {
+    alert("No data found");
+  } else {
+    displayTable(filderData);
+  }
 });
 
 fetchButton.addEventListener("click", fetchTodos);

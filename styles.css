@@ -10,20 +10,39 @@ h1 {
   margin-bottom: 20px;
 }
 
-#searchBox {
-  margin-bottom: 20px;
-  margin-left: 40px;
-  display: inline-block;
-  text-align: left;
+.filter-container{
+    display: flex;
+    margin-left: 10px;
+}
+
+#search-container {
+    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    display: inline-block;
+    text-align: left;
 }
 
 #searchText {
-  padding: 10px;
-  width: 100%;
-  font-size: 16px;
+    padding: 8px;
+    font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+#search-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-left: 5pxpx;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:#007bff;
+    color: #fff;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+  }
 
 .fetch-data {
   margin-bottom: 20px;
