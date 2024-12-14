@@ -1,0 +1,119 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-container{
+    display: flex;
+    margin-left: 10px;
+}
+
+#search-container {
+    margin-bottom: 15px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    display: inline-block;
+    text-align: left;
+}
+
+#searchText {
+    padding: 8px;
+    font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-left: 5pxpx;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:#007bff;
+    color: #fff;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+  }
+
+.fetch-data {
+  margin-bottom: 20px;
+  margin-left: 40px;
+  display: inline-block;
+  text-align: left;
+}
+
+#fetch-data {
+  padding: 10px;
+  width: 70px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#fetch-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#fetch-btn:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #1b1b1b;
+  background-color: #fff;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+label {
+  font-weight: bold;
+}
+@media (max-width: 750px) {
+  #searchBox,
+  .fetch-data {
+    display: block; /* Stack vertically */
+    width: 100%;
+    text-align: center; /* Center align content */
+  }
+
+  #searchText,
+  #fetch-data,
+  #fetch-btn {
+    width: 100%;
+    margin-right: 40px;
+    margin-bottom: 10px; /* Add some spacing between elements */
+  }
+
+  #fetch-btn {
+    width: auto; /* Allow button to resize naturally */
+  }
+}
